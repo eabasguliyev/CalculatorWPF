@@ -78,13 +78,11 @@ namespace CalculatorWPF
         }
         private void ButtonDel_OnClick(object sender, RoutedEventArgs e)
         {
+            if (_calculated)
+                return;
+
             RemoveValueFromTextBox();
             TextBlockValue.Focus();
-
-            if (!_calculated)
-            {
-                _operation.Result = TextBlockValue.Text;
-            }
         }
 
         private void RemoveValueFromTextBox()

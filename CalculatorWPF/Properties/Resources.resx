@@ -121,10 +121,4 @@
   <data name="clear_symbol_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear_symbol_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="divide_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\divide_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="multiply_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\multiply_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
