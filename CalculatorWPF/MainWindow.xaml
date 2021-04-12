@@ -10,121 +10,181 @@
         MinHeight="400"
         Background="#1F1F1F"
         WindowStartupLocation="CenterScreen">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" MinHeight="80"/>
             <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="Value" Grid.Row="0" Padding="5" FontSize="55" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Text="0"/>
-        <UniformGrid x:Name="Buttons" Grid.Row="1" Rows="5" Columns="4">
-            <Button Background="#131313" BorderThickness="0.5"
+        <TextBox x:Name="TextBlockValue" 
+                 Grid.Row="0" 
+                 Padding="5" 
+                 FontSize="55" 
+                 FontWeight="Bold"
+                 BorderThickness="0"
+                 Background="Transparent"
+                 Foreground="White" 
+                 HorizontalAlignment="Right" 
+                 VerticalAlignment="Center" 
+                 Text="0"
+                 IsEnabled="false"
+                 TextChanged="TextBlockValue_OnTextChanged"/>
+        <UniformGrid x:Name="Buttons" 
+                     Grid.Row="1" 
+                     Rows="5" 
+                     Columns="4">
+            <Button x:Name="ButtonCe"
+                    Background="#131313" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="CE"></Button>
-            <Button Background="#131313" BorderThickness="0.5">
+                    Content="CE"
+                    Click="ButtonCe_OnClick"></Button>
+            <Button x:Name="ButtonC"
+                    Background="#131313" 
+                    BorderThickness="0.5"
+                    FontSize="30" 
+                    Foreground="White"
+                    HorizontalContentAlignment="Center" 
+                    Content="C"
+                    Click="ButtonC_OnClick">
+            </Button>
+            <Button x:Name="ButtonDel"
+                    Background="#131313" 
+                    BorderThickness="0.5"
+                    Click="ButtonDel_OnClick">
                 <Viewbox Stretch="None">
                     <Image Source="Resources/clear_symbol_32px.png"/>
                 </Viewbox>
             </Button>
-            <Button Background="#131313" BorderThickness="0.5"
+            <Button Background="#131313" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
-                    HorizontalContentAlignment="Center" 
-                    Content="%">
+                    HorizontalContentAlignment="Center"
+                    Content="/"
+                    Click="ButtonOperator_OnClick">
             </Button>
-            <Button Background="#131313" BorderThickness="0.5"
+            <Button Background="#060606" 
+                    BorderThickness="0.5" 
                     FontSize="30" 
                     Foreground="White"
-                    HorizontalContentAlignment="Center">
-                <Viewbox Stretch="None">
-                    <Image Source="Resources/divide_30px.png"/>
-                </Viewbox>
+                    HorizontalContentAlignment="Center" 
+                    Content="7" 
+                    Margin="1,1.2,-0.6,-1.4"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
+                    FontSize="30" 
+                    Foreground="White"
+                    HorizontalContentAlignment="Center" 
+                    Content="8"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
+                    FontSize="30" 
+                    Foreground="White"
+                    HorizontalContentAlignment="Center" 
+                    Content="9"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#131313" 
+                    BorderThickness="0.5"
+                    FontSize="30" 
+                    Foreground="White"
+                    HorizontalContentAlignment="Center"
+                    Content="*"
+                    Click="ButtonOperator_OnClick">
             </Button>
-            <Button Background="#060606" BorderThickness="0.5" FontSize="30" 
-                    Foreground="White"
-                    HorizontalContentAlignment="Center" 
-                    Content="7"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="8"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="4"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="9"></Button>
-            <Button Background="#131313" BorderThickness="0.5"
-                    FontSize="30" 
-                    Foreground="White"
-                    HorizontalContentAlignment="Center">
-                <Viewbox Stretch="None">
-                    <Image Source="Resources/multiply_32px.png"/>
-                </Viewbox>
-            </Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="5"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="4"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="6"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#131313" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="5"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="-"
+                    Click="ButtonOperator_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="6"></Button>
-            <Button Background="#131313" BorderThickness="0.5"
+                    Content="1"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="-"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="2"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="1"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="3"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button x:Name="ButtonAdd"
+                    Background="#131313" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="2"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="+"
+                    Click="ButtonOperator_OnClick"></Button>
+            <Button x:Name="ButtonPlusMinus"
+                    Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="3"></Button>
-            <Button Background="#131313" BorderThickness="0.5"
+                    Content="+/-"
+                    Click="ButtonPlusMinus_OnClick"></Button>
+            <Button Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="+"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="0"
+                    Click="ButtonBase_OnClick"></Button>
+            <Button x:Name="ButtonDot"
+                    Background="#060606" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="+/-"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
+                    Content="."
+                    Click="ButtonDot_OnClick"></Button>
+            <Button x:Name="ButtonEqual"
+                    Background="#134369" 
+                    BorderThickness="0.5"
                     FontSize="30" 
                     Foreground="White"
                     HorizontalContentAlignment="Center" 
-                    Content="0"></Button>
-            <Button Background="#060606" BorderThickness="0.5"
-                    FontSize="30" 
-                    Foreground="White"
-                    HorizontalContentAlignment="Center" 
-                    Content="."></Button>
-            <Button Background="#134369" BorderThickness="0.5"
-                    FontSize="30" 
-                    Foreground="White"
-                    HorizontalContentAlignment="Center" 
-                    Content="="></Button>
+                    Content="="
+                    Click="ButtonEqual_OnClick"></Button>
         </UniformGrid>
     </Grid>
 </Window>

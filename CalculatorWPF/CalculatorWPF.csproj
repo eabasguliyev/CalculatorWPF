@@ -70,6 +70,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Operation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,12 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\clear_symbol_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\divide_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\multiply_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
